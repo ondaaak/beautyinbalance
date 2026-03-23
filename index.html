@@ -3,30 +3,157 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Beauty in balance</title>
+    <title>Beauty in Balance | Úvod</title>
+    <meta name="description" content="Kosmetický salon Beauty in Balance v Ostravě. Lash extension, lash lifting a laminace řas." />
     <link rel="icon" type="image/jpeg" href="bbl_logo.jpg" />
-    
-    <style>
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-      }
-
-      body {
-        display: grid;
-        place-items: center;
-        background: #ffffff;
-      }
-
-      img {
-        max-width: min(360px, 80vw);
-        height: auto;
-        display: block;
-      }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <img src="bbl_logo.jpg" alt="Beauty in balance logo" />
+    <header class="site-header">
+      <div class="wrap">
+        <a class="logo" href="index.html">
+          <img src="bbl_logo.jpg" alt="Beauty in Balance" />
+        </a>
+        <nav class="site-nav" aria-label="Hlavní navigace">
+          <a class="active" href="index.html">Úvod</a>
+          <a href="o-nas.html">O nás</a>
+          <a href="sluzby.html">Služby</a>
+          <a href="fotogalerie.html">Fotogalerie</a>
+          <a href="reference.html">Reference</a>
+          <a href="cenik.html">Ceník</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap home-page">
+      <section class="panel panel--center intro-mini">
+        <img src="salon.webp" alt="Interiér salonu" />
+      </section>
+
+      <section class="panel panel--split">
+        <img src="lucy.webp" alt="Kosmetička Beauty in Balance" class="media" />
+        <div class="content">
+          <h1>Krášlím vaše oči!</h1>
+          <p>
+            Jsem profesionální kosmetický salon v Ostravě, specializující se na lash
+            extension, lash lifting a laminaci. Snažím se vytvářet přirozený a krásný
+            vzhled pro moje zákaznice. Přijďte se odreagovat a odpočinout si v mém
+            příjemném salonu.
+          </p>
+          <a class="link-arrow" href="o-nas.html">O mně</a>
+        </div>
+      </section>
+
+      <section class="panel panel--services">
+        <div>
+          <h2>"Krásné oči bez líčení"</h2>
+        </div>
+        <div>
+          <p>
+            V našem kosmetickém salonu v Ostravě se specializujeme na profesionální
+            lash extension, lash lifting a laminaci. Naše vyškolené techničky používají
+            pouze kvalitní produkty, aby vám zajistily dlouhotrvající a přirozeně
+            vypadající výsledky.
+          </p>
+          <div class="service-list service-accordion">
+            <details open>
+              <summary>1. Lash extension</summary>
+              <div class="accordion-content">
+                <p>
+                  Lash extension je soubor umělých mihalnic, které se aplikují na
+                  přirozené řasy za účelem zvýšení délky, objemu a krásy očí.
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>2. Lash lifting</summary>
+              <div class="accordion-content">
+                <p>
+                  Dlouhotrvající natočení a zvýraznění vlastních řas bez prodlužování,
+                  ideální pro přirozený každodenní vzhled.
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>3. Laminace</summary>
+              <div class="accordion-content">
+                <p>
+                  Ošetření řas a obočí, které je vyživí, zafixuje tvar a dodá jim čistý,
+                  upravený vzhled.
+                </p>
+              </div>
+            </details>
+          </div>
+          <a class="link-arrow" href="sluzby.html">Kompletní nabídka služeb</a>
+        </div>
+      </section>
+
+      <section class="panel panel--form">
+        <h2>Objednejte si naše služby</h2>
+        <p>Vyplňte všechny potřebné údaje a my se vám ozveme co nejdříve zpět.</p>
+        <form>
+          <label for="name">Jméno a příjmení</label>
+          <input id="name" name="name" type="text" required />
+
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="service">Zvolená služba</label>
+          <select id="service" name="service" required>
+            <option value="">Vyberte službu</option>
+            <option>Lash extension</option>
+            <option>Lash lifting</option>
+            <option>Laminace</option>
+          </select>
+
+          <label for="message">Zpráva</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+
+          <button type="submit">Objednat</button>
+        </form>
+      </section>
+
+      <section class="panel panel--gallery home-gallery">
+        <h2>Náš umělecký rukopis</h2>
+        <p>
+          V naší fotogalerii najdete přehled naší práce v oblasti lash extension, lash liftingu a laminace.
+          Podívejte se na před a po fotografie našich spokojených zákazníků a inspirujte se pro svůj vlastní
+          kosmetický zážitek. Zároveň zde můžete najít ukázky našich nejnovějších trendů v oblasti líčení
+          a úpravy obočí.
+        </p>
+        <div class="gallery-grid">
+          <img src="salon.webp" alt="Salon detail" />
+          <img src="lucy.webp" alt="Práce v salonu" />
+          <img src="salon.webp" alt="Kosmetické ošetření" />
+          <img src="lucy.webp" alt="Vizáž salonu" />
+        </div>
+        <a class="link-arrow" href="fotogalerie.html">Fotogalerie</a>
+      </section>
+
+      <section class="panel panel--review">
+        <h2>Názory zákazníků</h2>
+        <div class="review-box">
+          <img src="salon.webp" alt="Spokojené zákaznice" />
+          <blockquote>
+            <p>
+              Navštívila jsem tento kosmetický salon a musím říct, že jsem byla
+              nadšená. Perfektně provedené lash extension, vysoká kvalita použitých
+              produktů a příjemná atmosféra. Určitě se sem budu vracet!
+            </p>
+            <footer>Hana Novotná, Španělsko</footer>
+            <a class="link-arrow" href="reference.html">Reference</a>
+          </blockquote>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <small>© 2026 Beauty in Balance. Všechna práva vyhrazena.</small>
+      </div>
+    </footer>
   </body>
 </html>

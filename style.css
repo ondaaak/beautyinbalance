@@ -1,0 +1,723 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
+@import url("https://fonts.cdnfonts.com/css/metropolis-2");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #ffffff;
+  --panel: #ffffff;
+  --text: #49506b;
+  --heading: #2b3754;
+  --muted: #81879b;
+  --line: #eceef3;
+  --accent: #f0a4ac;
+  --accent-strong: #ea8896;
+  --width: min(1160px, calc(100% - 2.4rem));
+  --font-heading: "Playfair Display Flex", Playfair-Display-Fallback, "Apple Color Emoji", "Noto Color Emoji", serif;
+  --font-body: "Metropolis", Metropolis-Fallback, "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  line-height: 1.6;
+  background: var(--bg);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.wrap {
+  width: var(--width);
+  margin: 0 auto;
+}
+
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid var(--line);
+  margin-top: 1.8rem;
+  box-shadow: 0 10px 30px rgba(36, 45, 71, 0.04);
+}
+
+.site-header .wrap {
+  padding: 1.1rem 1rem 0.95rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo img {
+  width: 104px;
+  height: 104px;
+  object-fit: contain;
+  border: 0;
+  background: #fff;
+  border-radius: 12px;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.9rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--heading);
+  font-size: clamp(1.05rem, 1.2vw, 1.32rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  font-family: "Playfair Display", var(--font-heading);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 0.22rem;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--accent-strong);
+  border-bottom-color: var(--accent-strong);
+}
+
+main.wrap {
+  padding: 2.4rem 0 2rem;
+}
+
+.panel {
+  background: var(--panel);
+  border-radius: 16px;
+  margin-bottom: 2.2rem;
+  padding: 2rem;
+  border: 1px solid var(--line);
+  box-shadow: 0 14px 34px rgba(43, 55, 84, 0.06);
+}
+
+.panel h1,
+.panel h2,
+.panel h3 {
+  font-family: var(--font-heading);
+  color: var(--heading);
+  margin: 0 0 0.7rem;
+  line-height: 1.05;
+  font-weight: 400;
+}
+
+.panel h1 {
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+}
+
+.panel h2 {
+  font-size: clamp(1.8rem, 3.2vw, 3rem);
+}
+
+.panel p {
+  margin: 0 0 0.8rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-title .line {
+  width: 76px;
+  height: 3px;
+  background: var(--accent-strong);
+  margin: 0.9rem auto 0;
+}
+
+.lead {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.05rem;
+}
+
+.intro-mini {
+  display: grid;
+  place-items: center;
+}
+
+.intro-mini img {
+  width: min(300px, 100%);
+  border-radius: 14px;
+}
+
+.panel--split {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+
+.panel--split .media {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--accent-strong);
+  text-decoration: none;
+  font-weight: 400;
+  margin-top: 0.25rem;
+}
+
+.link-arrow::after {
+  content: "→";
+}
+
+.panel--services {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 1.6rem;
+}
+
+.service-list article {
+  border-top: 1px solid var(--line);
+  padding: 0.8rem 0;
+}
+
+.service-list article:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.service-list h3 {
+  margin-bottom: 0.45rem;
+  color: var(--accent-strong);
+}
+
+.service-accordion details {
+  border-top: 1px solid #d8dce6;
+  padding: 0.85rem 0;
+  overflow: hidden;
+}
+
+.service-accordion details:last-child {
+  border-bottom: 1px solid #d8dce6;
+}
+
+.service-accordion summary {
+  list-style: none;
+  cursor: pointer;
+  color: var(--accent-strong);
+  font-family: "Playfair Display", var(--font-heading);
+  font-size: clamp(1.12rem, 1.4vw, 1.45rem);
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.service-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.service-accordion summary::after {
+  content: "+";
+  color: #5e6680;
+  font-family: var(--font-body);
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.service-accordion details[open] summary::after {
+  content: "−";
+}
+
+.service-accordion .accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.62s ease, opacity 0.5s ease;
+}
+
+.service-accordion .accordion-content p {
+  overflow: hidden;
+  margin: 0;
+}
+
+.service-accordion details[open] .accordion-content {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-top: 0.6rem;
+}
+
+.about-images {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1.2rem;
+  margin-top: 2.2rem;
+}
+
+.about-images img {
+  width: 100%;
+  border-radius: 20px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.about-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  margin-top: 2.4rem;
+}
+
+.about-bottom h2 {
+  margin-top: 0.2rem;
+}
+
+.services-intro {
+  max-width: 940px;
+  margin: 0 auto 3rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.service-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem 2.4rem;
+}
+
+.service-block h3 {
+  font-size: clamp(2rem, 2vw, 2.4rem);
+  margin-bottom: 1rem;
+}
+
+.service-block p {
+  font-size: 1.02rem;
+}
+
+.panel--form {
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+label {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid #dce0e8;
+  border-radius: 10px;
+  padding: 0.62rem 0.75rem;
+  font: inherit;
+  color: var(--text);
+  background: #fff;
+}
+
+button {
+  width: fit-content;
+  background: #fff;
+  color: var(--accent-strong);
+  border: 1px solid #f2bec6;
+  border-radius: 999px;
+  padding: 0.58rem 1.8rem;
+  font: inherit;
+  font-weight: 400;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(234, 135, 151, 0.18);
+}
+
+.panel--gallery .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+  margin: 2rem 0;
+}
+
+.panel--gallery .gallery-grid img {
+  border-radius: 18px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.home-gallery .gallery-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.home-gallery .gallery-grid img {
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+}
+
+.home-gallery {
+  text-align: center;
+}
+
+.home-gallery p {
+  max-width: 980px;
+  margin: 0 auto 0.85rem;
+  text-align: center;
+}
+
+.home-gallery .link-arrow {
+  margin-top: 0.5rem;
+}
+
+.reservation-lead {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: var(--font-body);
+  color: var(--text);
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+.reference-page .panel {
+  border: none;
+}
+
+.reference-page .reservation-lead {
+  width: min(760px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.fotogalerie-page .panel--gallery {
+  border: none;
+}
+
+.fotogalerie-page .lead {
+  width: min(900px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.sluzby-page .panel {
+  border: none;
+}
+
+.sluzby-page .section-title h1 {
+  font-size: clamp(1.8rem, 2.6vw, 2.4rem);
+}
+
+.sluzby-page .services-intro {
+  max-width: 980px;
+  margin: 0 auto 3.8rem;
+  text-align: center;
+  font-family: "Playfair Display", var(--font-heading);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.55;
+}
+
+.sluzby-page .service-grid-3 {
+  gap: 2.8rem 3rem;
+}
+
+.o-nas-page .panel {
+  border: none;
+}
+
+.o-nas-page .lead {
+  width: min(900px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.o-nas-page .about-bottom h2 {
+  font-size: clamp(1.35rem, 1.9vw, 1.8rem);
+}
+
+.home-page .panel {
+  border: none;
+}
+
+.home-page .panel--form {
+  border: 1px solid var(--line);
+}
+
+.home-page .panel--services h2 {
+  font-size: clamp(1.35rem, 1.9vw, 1.8rem);
+}
+
+.review-grid-2 {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.6rem 2.2rem;
+}
+
+.review-entry p {
+  margin-bottom: 0.8rem;
+}
+
+.review-entry strong {
+  color: var(--heading);
+  font-size: 1.7rem;
+  font-family: var(--font-heading);
+  font-weight: 400;
+}
+
+.pricing-columns {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.2rem;
+}
+
+.price-col h2 {
+  margin-bottom: 1.6rem;
+}
+
+.price-item {
+  border-bottom: 1px solid #cecece;
+  padding: 0.85rem 0 1rem;
+}
+
+.price-item-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 0.15rem;
+}
+
+.price-item h3 {
+  margin: 0;
+  color: var(--accent-strong);
+  font-size: clamp(1.9rem, 2.3vw, 2.4rem);
+}
+
+.price-item .cost {
+  color: var(--accent-strong);
+  font-family: var(--font-heading);
+  font-size: 2.1rem;
+}
+
+.price-item p {
+  margin: 0;
+}
+
+.cenik-page .price-item h3 {
+  font-family: "Playfair Display", var(--font-heading);
+}
+
+.cenik-page .price-col h2,
+.cenik-page .price-item .cost,
+.cenik-page .price-item p,
+.cenik-page .lead {
+  font-family: var(--font-body);
+}
+
+.cenik-page .section-title h1 {
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+}
+
+.cenik-page .lead {
+  text-align: center;
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.cenik-page .panel {
+  border: none;
+}
+
+.cenik-page .price-col h2 {
+  font-size: clamp(1.7rem, 2.2vw, 2.15rem);
+  margin-bottom: 2.35rem;
+}
+
+.cenik-page .price-item h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.cenik-page .price-item .cost {
+  font-family: "Playfair Display", var(--font-heading);
+  font-size: clamp(1.25rem, 1.55vw, 1.55rem);
+}
+
+.cenik-page .price-item p {
+  font-size: 1.02rem;
+  line-height: 1.45;
+}
+
+.cenik-page .price-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 1.1rem;
+  row-gap: 0.25rem;
+  align-items: start;
+}
+
+.cenik-page .price-item-head {
+  display: contents;
+}
+
+.cenik-page .price-item h3 {
+  grid-column: 1;
+}
+
+.cenik-page .price-item .cost {
+  grid-column: 2;
+  white-space: nowrap;
+}
+
+.cenik-page .price-item p {
+  grid-column: 1;
+}
+
+.cenik-page .price-col .price-item:first-of-type {
+  margin-top: 0.55rem;
+}
+
+.panel--review .review-box {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.review-box img {
+  border-radius: 10px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+blockquote {
+  margin: 0;
+}
+
+blockquote p {
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  color: var(--heading);
+  line-height: 1.2;
+}
+
+strong,
+b {
+  font-weight: 400;
+}
+
+blockquote footer {
+  margin-bottom: 0.7rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.page-hero {
+  text-align: center;
+  padding: 2.4rem 1rem;
+}
+
+.simple-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.simple-card {
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.site-footer {
+  padding: 0 0 1.8rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+@media (max-width: 980px) {
+  .panel--split,
+  .panel--services,
+  .panel--review .review-box,
+  .simple-grid,
+  .panel--gallery .gallery-grid,
+  .service-grid-3,
+  .pricing-columns,
+  .about-images,
+  .about-bottom,
+  .review-grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .price-item h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .price-item .cost {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    margin-top: 0;
+  }
+
+  .panel--split,
+  .panel--services,
+  .panel--review .review-box,
+  .simple-grid,
+  .panel--gallery .gallery-grid,
+  .service-grid-3,
+  .pricing-columns,
+  .about-images,
+  .about-bottom,
+  .review-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    padding: 1.15rem;
+  }
+
+  .site-nav {
+    gap: 0.7rem 1rem;
+  }
+
+  .site-nav a {
+    font-size: 1rem;
+  }
+
+  .service-accordion summary {
+    font-size: 1.05rem;
+  }
+
+  .home-gallery .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
